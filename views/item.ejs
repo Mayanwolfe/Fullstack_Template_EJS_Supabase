@@ -17,7 +17,7 @@
 
   <!-- Update -->
   <form id="updateForm" action="/item/update/" method="POST">
-    <input type="hidden" name="_id" id="updateId"> <!--Bundle ID with the form data-->
+    <input type="hidden" name="id" id="updateId"> <!--Bundle ID with the form data-->
     <input type="text" name="name" id="updateName" placeholder="New item name" required>
     <input type="text" name="description" id="updateDescription" placeholder="New item description" required>
     <button type="submit">Update Item</button>
@@ -28,8 +28,8 @@
     <% items.forEach((item) => { %>
       <li>
         <span><%= item.name %>: <%= item.description %></span>
-        <button onclick="editItem('<%= item._id %>', '<%= item.name %>', '<%= item.description %>')">Edit</button>
-        <button onclick="deleteItem('<%= item._id %>')">Delete</button>
+        <button onclick="editItem('<%= item.id %>', '<%= item.name %>', '<%= item.description %>')">Edit</button>
+        <button onclick="deleteItem('<%= item.id %>')">Delete</button>
       </li>
     <% }); %>
   </ul>
